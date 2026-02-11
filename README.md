@@ -87,4 +87,4 @@ This portfolio is constantly evolving as I learn and grow as a developer. Feel f
 
 ---
 
-*Built with 💙 by SwagBoy3000*
+*Built with 💜 by SwagBoy3000*
