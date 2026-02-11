@@ -77,3 +77,8 @@ a {
     transition: var(--transition);
     cursor: pointer;
 }
+.btn.primary{
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
