@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwagBoy3000</title>
-    <!-- CSS -->
     <link rel="stylesheet" href="./index.css">
-    <!-- ICON -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <!-- GOOGLE FONTS (montserrat) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <! ==================== NAVBAR ==================!>
+    <!-- NAVBAR -->
     <nav>
         <div class="container nav_container">
             <a href="#">SwagBoy3000</a>
@@ -23,13 +20,123 @@
             </button>
         </div>
     </nav>
-    <! ==================== FLOATING NAVBAR ==================!>
+
+    <!-- FLOATING NAVBAR - Make sure hrefs match section IDs -->
     <nav class="float_nav">
-        <a href="#" class="active"><i class="uil uil-estate"></i></a>
-        <a href="#resume"><i class="uil uil-clipboard-alt"></i></a>
-        <a href="#projects"><i class="uil uil-suitcase"></i></a>
-        <a href="#faqs"><i class="uil uil-question"></i></a>
+        <a href="#home" class="active"><i class="uil uil-estate"></i></a>
+        <a href="#resume"><i class="uil uil-user"></i></a>
+        <a href="#projects"><i class="uil uil-images"></i></a>
+        <a href="#faqs"><i class="uil uil-smile-dizzy"></i></a>
         <a href="#contact"><i class="uil uil-phone"></i></a>
     </nav>
+
+    <!-- HEADER (Home section - no ID needed, href="#" targets this) -->
+    <header id="home">
+        <div class="header">
+            <div class="header_img">
+                <img src="./13ba2f96d42d462a9b823b13ab11a05d~tplv-jj85edgx6n-image-origin.jpeg" alt="Header image">
+            </div>
+            <h5>Hi, I'm Idir</h5>
+            <h1>CS Student <span>at USTHB</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quidem eveniet, unde consequuntur commodi sunt provident!</p>
+            <div class="header_cta">
+                <a href="#projects" class="btn">My Projects</a>
+                <a href="#contact" class="btn primary">Contact me</a>
+            </div>
+            <menu class="header_socials">
+                <a href="https://github.com/SwagBoy3000"><i class="uil uil-github-alt"></i></a>
+                <a href=""><i class="uil uil-linkedin-alt"></i></a>
+                <a href=""><i class="uil uil-play"></i></a>
+            </menu>
+        </div>
+    </header>
+
+    <!-- RESUME SECTION -->
+    <section id="resume">
+        <div class="container resume">
+            <div class="left">
+                <h1>Why hire me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <menu>
+                    <button class="btn primary Experience">Experience</button>
+                    <button class="btn education">Education</button>
+                    <button class="btn skills">Skills</button>
+                    <button class="btn about">About Me</button>
+                </menu>
+            </div>
+            <div class="right"></div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <h1>My Projects</h1>
+            <p>Check out what I've built</p>
+            <menu class="project_cat">
+                <button class="btn active">All</button>
+                <button class="btn">Frontrnd</button>
+                <button class="btn">Backend</button>
+                <button class="btn">Fullstack</button>
+                <button class="btn">Python</button>
+            </menu>
+        <div class="container projects">
+            <article class="projects">
+                <div class="prjct_img">
+                    <img src="" alt="">
+                </div>
+                <h5>Project One Title (Fullstack)</h5>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?
+                </p>
+                <div class="project_cta">
+                    <a href="" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
+                </div>
+            </article>
+            <article class="projects">
+                <div class="prjct_img">
+                    <img src="" alt="">
+                </div>
+                <h5>Project Two Title (Fullstack)</h5>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?
+                </p>
+                <div class="project_cta">
+                    <a href="" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
+                </div>
+            </article>
+            <article class="projects">
+                <div class="prjct_img">
+                    <img src="" alt="">
+                </div>
+                <h5>Project Three Title (Fullstack)</h5>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?
+                </p>
+                <div class="project_cta">
+                    <a href="" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- FAQS SECTION -->
+    <section id="faqs">
+        <div class="container">
+            <h1>FAQs</h1>
+            <p>Frequently asked questions</p>
+            <!-- Add FAQs here -->
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <p>Get in touch!</p>
+            <!-- Add contact form here -->
+        </div>
+    </section>
+
+    <script src="./index.js"></script>
 </body>
 </html>

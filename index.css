@@ -25,6 +25,9 @@
     --container-w-sm: 94%;
     --transition: all 350ms ease;
 }
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: "Montserrat", sans-serif;
     line-height: 1.6;
@@ -131,8 +134,8 @@ nav:not(.float_nav){
 .float_nav{
     position: fixed;
     left: 50%;
-    bottom: 2rem;
-    transform: translateX(-50%);
+    bottom: -8rem;
+    transform: translateX(-50%) scale(0);
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -144,7 +147,12 @@ nav:not(.float_nav){
     gap: 0.4rem;
     padding: 0.7rem;
     border-radius: 2.2rem;
+    opacity: 0;
     z-index: 9;
+    animation: animateFloatNav 1s ease forwards;
+}
+.dark-theme{
+    background: rgba(255, 255, 255, 0.1);
 }
 .float_nav a{
     color: var(--color-gray-900);
@@ -156,5 +164,158 @@ nav:not(.float_nav){
     font-size: 1rem;
 }
 .float_nav a.active{
+    background: var(--color-primary);
+    color: white;
+}
+@keyframes animateFloatNav{
+    to {
+        bottom: 1.5rem;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+/*================== HEADER ==============*/
+header{
+    margin-top: 3rem;
+    height: calc(100vh - 3rem);
+    display: grid;
+    place-items: center;
+}
+.dark-theme header{
+    background: linear-gradient(var(--color-gray-100),var(--color-gray-0));
+}
+.header{
+    width: 36rem;
+    text-align: center;
+}
+.header_img{
+    width: 12rem;
+    height: 14rem;
+    border-radius: 6rem 6rem 2rem 2rem;
+    overflow: hidden;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+}
+.header_img img{
+    height: 100%;
+}
+.header h1{
+    margin: 0.8rem 0 0.1rem;
+}
+.header h1 span{
+    color: var(--color-primary);
+}
+.header_cta{
+    margin-top: 1.8rem;
+    display: flex;
+    gap: 1rem;
+    margin-inline: auto;
+    width: fit-content;
+}
+.header_socials {
+    position: absolute;
+    right: 10%;
+    bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.header_socials a{
+    background: var(--color-gray-100);
+    color: var(--color-primary);
+    width: 2.2rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.6rem;
+    transition: var(--transition);
+}
+.header_socials a:hover{
+    background: var(--color-primary-variant);
+    color: var(--color-gray-0);
+}
+/*============== resume =============*/
+.resume{
+    display: grid;
+    grid-template-columns: 14rem auto;
+    gap: 7rem;
+    width: 60%;
+
+}
+.left p{
+    margin: 0.5rem 0;
+}
+.left menu{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.left menu button{
+    border-color: var(--color-gray-0);
+}
+.right h4{
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+.right > p {
+    margin-bottom: 1.5rem;
+}
+.right ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.right ul li{
+    background: var(--color-gray-0);
+    padding: 1.5rem;
+    border: 0.4rem solid var(--color-gray-0);
+    transition: var(--transition);
+    cursor: default;
+}
+.right ul li:hover{
+    background: transparent;
+}
+.right li h6{
+    color: var(--color-gray-500);
+}
+.right li h5{
+    color: var(--color-primary);
+    margin: 0.8rem 0;
+}
+/* education */
+.right.education ul{
+    grid-template-columns: 1fr;
+}
+.right.education li h5{
+    margin-top: 0;
+}
+/* skills */
+.right.skills ul{
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+}
+.right.skills ul li{
+    padding: 1rem;
+}
+/* about */
+.right.about ul {
+    gap: 0;
+}
+.right.about li {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    gap: 0.3rem;
+    border: 0;
+}
+.right.about li h6{
+    color: var(--color-gray-500);
+}
+.right.about li h5{
+    color: var(--color-gray-900);
+}
+.project_cat{
     
 }
