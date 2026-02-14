@@ -1,6 +1,7 @@
 // Float nav active state
 const FloatNavsBtn = document.querySelectorAll('.float_nav a');
-const sections = document.querySelectorAll('section, header'); // All sections + header
+const sections = document.querySelectorAll('section, header');
+const mainContent = document.querySelector('.main-content'); // ✅ Get scroll container
 
 const removeActiveClass = () => {
     FloatNavsBtn.forEach(Btn => {
@@ -8,13 +9,56 @@ const removeActiveClass = () => {
     });
 };
 
-// Click event (manual navigation)
 FloatNavsBtn.forEach((Btn) => {
     Btn.addEventListener('click', () => {
         removeActiveClass();
         Btn.classList.add('active');
     });
 });
+
+// ✅ UPDATED: Listen to scroll on .main-content instead of window
+if (mainContent) {
+    mainContent.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            // ✅ Use mainContent.scrollTop instead of window.scrollY
+            if (mainContent.scrollTop >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        FloatNavsBtn.forEach(link => {
+            link.classList.remove('active');
+            
+            if (link.getAttribute('href') === `#${current}` || 
+                (current === '' && link.getAttribute('href') === '#home')) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
+// ✅ Fix smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement && mainContent) {
+            mainContent.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Rest of your JavaScript stays the same...
 
 // ✅ SCROLL DETECTION - Updates active link based on scroll position
 window.addEventListener('scroll', () => {

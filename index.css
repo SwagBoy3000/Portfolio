@@ -25,48 +25,75 @@
     --container-w-sm: 94%;
     --transition: all 350ms ease;
 }
+/* ============= REMOVE DEFAULT SCROLLBAR FROM HTML/BODY ============= */
 html {
+    scroll-behavior: smooth;
+    overflow: hidden; /* Remove scrollbar from html */
+    height: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    background: var(--color-gray-0);
+    font-size: 0.9rem;
+    color: var(--color-gray-800);
+    user-select: none;
+    overflow: hidden; /* Remove scrollbar from body */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============= CUSTOM SCROLLBAR ON MAIN WRAPPER ============= */
+/* Add this class to a wrapper div in your HTML */
+.main-content {
+    height: calc(100vh - 3rem);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 3rem;
     scroll-behavior: smooth;
 }
 
-/* ============= SCROLLBAR ============= */
-::-webkit-scrollbar {
+/* Style the scrollbar */
+.main-content::-webkit-scrollbar {
     width: 12px;
 }
 
-/* ✅ FIX 1: Start scrollbar below navbar */
-::-webkit-scrollbar-track {
-    background: var(--color-gray-50);
-    border-radius: 10px;
-    margin-top: 3rem; /* ← Pushes scrollbar track down */
-    margin-bottom: 0.5rem; /* Optional: small gap at bottom */
+/* Hide arrow buttons */
+.main-content::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
 }
 
-::-webkit-scrollbar-thumb {
+/* Track styling */
+.main-content::-webkit-scrollbar-track {
+    background: var(--color-gray-50);
+    border-radius: 10px;
+}
+
+/* Thumb styling */
+.main-content::-webkit-scrollbar-thumb {
     background: var(--color-primary);
     border-radius: 10px;
     border: 2px solid var(--color-gray-50);
 }
 
-::-webkit-scrollbar-thumb:hover {
+.main-content::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary-variant);
 }
 
-::-webkit-scrollbar-thumb:active {
+.main-content::-webkit-scrollbar-thumb:active {
     background: #0d4a9f;
 }
 
-/* ✅ FIX 2: Hide arrow buttons */
-::-webkit-scrollbar-button {
-    display: none;
-}
-
-::-webkit-scrollbar-corner {
+.main-content::-webkit-scrollbar-corner {
     background: var(--color-gray-50);
 }
 
-/* Firefox */
-* {
+/* Firefox scrollbar */
+.main-content {
     scrollbar-width: thin;
     scrollbar-color: var(--color-primary) var(--color-gray-50);
 }
