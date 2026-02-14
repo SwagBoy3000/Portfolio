@@ -1,7 +1,7 @@
 // Float nav active state
 const FloatNavsBtn = document.querySelectorAll('.float_nav a');
 const sections = document.querySelectorAll('section, header');
-const mainContent = document.querySelector('.main-content'); // ✅ Get scroll container
+const pageWrapper = document.querySelector('.page-wrapper');
 
 const removeActiveClass = () => {
     FloatNavsBtn.forEach(Btn => {
@@ -16,17 +16,16 @@ FloatNavsBtn.forEach((Btn) => {
     });
 });
 
-// ✅ UPDATED: Listen to scroll on .main-content instead of window
-if (mainContent) {
-    mainContent.addEventListener('scroll', () => {
+// Scroll detection
+if (pageWrapper) {
+    pageWrapper.addEventListener('scroll', () => {
         let current = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            // ✅ Use mainContent.scrollTop instead of window.scrollY
-            if (mainContent.scrollTop >= (sectionTop - 200)) {
+            if (pageWrapper.scrollTop >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
         });
@@ -42,50 +41,21 @@ if (mainContent) {
     });
 }
 
-// ✅ Fix smooth scrolling for anchor links
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+        const target = document.querySelector(targetId);
         
-        if (targetElement && mainContent) {
-            mainContent.scrollTo({
-                top: targetElement.offsetTop,
+        if (target && pageWrapper) {
+            pageWrapper.scrollTo({
+                top: target.offsetTop,
                 behavior: 'smooth'
             });
         }
     });
 });
-
-// Rest of your JavaScript stays the same...
-
-// ✅ SCROLL DETECTION - Updates active link based on scroll position
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        // Check if section is in viewport
-        if (window.scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    // Update active class based on current section
-    FloatNavsBtn.forEach(link => {
-        link.classList.remove('active');
-        
-        // Match href to current section
-        if (link.getAttribute('href') === `#${current}` || 
-            (current === '' && link.getAttribute('href') === '#')) {
-            link.classList.add('active');
-        }
-    });
-});
-
 
 // Resume section content
 const right = document.querySelector('.right');
@@ -140,15 +110,15 @@ const skillsContent = `<h4>Skills</h4>
                 <ul>
                     <li>
                         <h5>HTML & CSS</h5>
-                        <p>Building responsive and modern websites</p>
+                        <p>Building responsive websites</p>
                     </li>
                     <li>
                         <h5>JavaScript</h5>
-                        <p>Interactive web applications and DOM manipulation</p>
+                        <p>Interactive web applications</p>
                     </li>
                     <li>
                         <h5>Git & GitHub</h5>
-                        <p>Version control and collaboration</p>
+                        <p>Version control</p>
                     </li>
                     <li>
                         <h5>Problem Solving</h5>
@@ -161,19 +131,19 @@ const aboutContent = `<h4>About Me</h4>
                 <ul>
                     <li>
                         <h5>Who Am I?</h5>
-                        <p>I'm Idir, a passionate CS student at USTHB who loves building cool projects and learning new technologies.</p>
+                        <p>I'm Idir, a passionate CS student at USTHB.</p>
                     </li>
                     <li>
                         <h5>What I Love</h5>
-                        <p>Coding, problem-solving, and creating things that make a difference.</p>
+                        <p>Coding and problem-solving.</p>
                     </li>
                     <li>
                         <h5>My Goals</h5>
-                        <p>To become a skilled full-stack developer and contribute to open-source projects.</p>
+                        <p>To become a skilled full-stack developer.</p>
                     </li>
                     <li>
                         <h5>Hobbies</h5>
-                        <p>Gaming, reading tech blogs, and exploring new frameworks.</p>
+                        <p>Gaming and exploring new frameworks.</p>
                     </li>
                 </ul>`;
 
@@ -202,37 +172,35 @@ left.forEach((Btn) => {
     });
 });
 
-// Set initial content
 right.innerHTML = expContent;
-const containerEl = document.querySelector('.projects_container')
-if (containerEl) { // ✅ Check if element exists
+
+// MixItUp
+const containerEl = document.querySelector('.projects_container');
+
+if (containerEl) {
     let mixer = mixitup(containerEl, {
-        animation: { // ← Lowercase 'a'
-            enable: false
+        animation: {
+            enable: true,
+            duration: 400,
+            easing: 'ease',
+            effects: 'fade translateY(30px)'
         },
         selectors: {
-            target: '.projects' // ← Target class
+            target: '.projects'
+        },
+        load: {
+            filter: 'all'
         }
     });
 
-    // ✅ Filter button functionality
     const filterButtons = document.querySelectorAll('.project_cat .btn');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
             this.classList.add('active');
-            
-            // Get filter value
             const filterValue = this.getAttribute('data-filter');
-            
-            // Apply filter
             mixer.filter(filterValue);
         });
     });
-} else {
-    console.error('MixItUp container not found!');
 }

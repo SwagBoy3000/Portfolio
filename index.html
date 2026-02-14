@@ -20,126 +20,138 @@
             </button>
         </div>
     </nav>
-    <div class="main-content">
-    <!-- FLOATING NAVBAR - Make sure hrefs match section IDs -->
-    <nav class="float_nav">
-        <a href="#home" class="active"><i class="uil uil-estate"></i></a>
-        <a href="#resume"><i class="uil uil-user"></i></a>
-        <a href="#projects"><i class="uil uil-images"></i></a>
-        <a href="#faqs"><i class="uil uil-smile-dizzy"></i></a>
-        <a href="#contact"><i class="uil uil-phone"></i></a>
-    </nav>
 
-    <!-- HEADER (Home section - no ID needed, href="#" targets this) -->
-    <header id="home">
-        <div class="header">
-            <div class="header_img">
-                <img src="./13ba2f96d42d462a9b823b13ab11a05d~tplv-jj85edgx6n-image-origin.jpeg" alt="Header image">
-            </div>
-            <h5>Hi, I'm Idir</h5>
-            <h1>CS Student <span>at USTHB</span></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quidem eveniet, unde consequuntur commodi sunt provident!</p>
-            <div class="header_cta">
-                <a href="#projects" class="btn">My Projects</a>
-                <a href="#contact" class="btn primary">Contact me</a>
-            </div>
-            <menu class="header_socials">
-                <a href="https://github.com/SwagBoy3000"><i class="uil uil-github-alt"></i></a>
-                <a href=""><i class="uil uil-linkedin-alt"></i></a>
-                <a href=""><i class="uil uil-play"></i></a>
-            </menu>
-        </div>
-    </header>
+    <!-- PAGE WRAPPER -->
+    <div class="page-wrapper">
+        <!-- FLOATING NAVBAR -->
+        <nav class="float_nav">
+            <a href="#home" class="active"><i class="uil uil-estate"></i></a>
+            <a href="#resume"><i class="uil uil-user"></i></a>
+            <a href="#projects"><i class="uil uil-images"></i></a>
+            <a href="#faqs"><i class="uil uil-smile-dizzy"></i></a>
+            <a href="#contact"><i class="uil uil-phone"></i></a>
+        </nav>
 
-    <!-- RESUME SECTION -->
-    <section id="resume">
-        <div class="container resume">
-            <div class="left">
-                <h1>Why hire me</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <menu>
-                    <button class="btn primary Experience">Experience</button>
-                    <button class="btn education">Education</button>
-                    <button class="btn skills">Skills</button>
-                    <button class="btn about">About Me</button>
+        <!-- HEADER -->
+        <header id="home">
+            <div class="header">
+                <div class="header_img">
+                    <img src="./13ba2f96d42d462a9b823b13ab11a05d~tplv-jj85edgx6n-image-origin.jpeg" alt="Header image">
+                </div>
+                <h5>Hi, I'm Idir</h5>
+                <h1>CS Student <span>at USTHB</span></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quidem eveniet, unde consequuntur commodi sunt provident!</p>
+                <div class="header_cta">
+                    <a href="#projects" class="btn">My Projects</a>
+                    <a href="#contact" class="btn primary">Contact me</a>
+                </div>
+                <menu class="header_socials">
+                    <a href="https://github.com/SwagBoy3000"><i class="uil uil-github-alt"></i></a>
+                    <a href=""><i class="uil uil-linkedin-alt"></i></a>
+                    <a href=""><i class="uil uil-play"></i></a>
                 </menu>
             </div>
-            <div class="right"></div>
-        </div>
-    </section>
+        </header>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects">
-        <h1>My Projects</h1>
+        <!-- RESUME SECTION -->
+        <section id="resume">
+            <div class="container resume">
+                <div class="left">
+                    <h1>Why hire me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <menu>
+                        <button class="btn primary Experience">Experience</button>
+                        <button class="btn education">Education</button>
+                        <button class="btn skills">Skills</button>
+                        <button class="btn about">About Me</button>
+                    </menu>
+                </div>
+                <div class="right"></div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h1>My Projects</h1>
             <p>Check out what I've built</p>
             <menu class="project_cat">
-                <button class="btn active" data-filter= "all">All</button>
-                <button class="btn" data-filter=".frontend">Frontrnd</button>
+                <button class="btn active" data-filter="all">All</button>
+                <button class="btn" data-filter=".frontend">Frontend</button>
                 <button class="btn" data-filter=".backend">Backend</button>
                 <button class="btn" data-filter=".fullstack">Fullstack</button>
                 <button class="btn" data-filter=".python">Python</button>
             </menu>
-        <div class="container projects_container">
-            <article class="projects mix frontend" data-order="1">
-                <div class="prjct_img">
-                    <img src="" alt="">
-                </div>
-                <h5>Project One Title (Fullstack)</h5>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?
-                </p>
-                <div class="project_cta">
-                    <a href="" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-            <article class="projects mix backend" data-order="2">
-                <div class="prjct_img">
-                    <img src="" alt="">
-                </div>
-                <h5>Project Two Title (Fullstack)</h5>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?
-                </p>
-                <div class="project_cta">
-                    <a href="" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-            <article class="projects mix fullstack" data-order="3">
-                <div class="prjct_img">
-                    <img src="" alt="">
-                </div>
-                <h5>Project Three Title (Fullstack)</h5>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?
-                </p>
-                <div class="project_cta">
-                    <a href="" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-        </div>
-    </section>
+            <div class="container projects_container">
+                <article class="projects mix frontend" data-order="1">
+                    <div class="prjct_img">
+                        <img src="https://via.placeholder.com/400x300" alt="Project 1">
+                    </div>
+                    <h5>Project One Title (Frontend)</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?</p>
+                    <div class="project_cta">
+                        <a href="#" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </article>
+                <article class="projects mix backend" data-order="2">
+                    <div class="prjct_img">
+                        <img src="https://via.placeholder.com/400x300" alt="Project 2">
+                    </div>
+                    <h5>Project Two Title (Backend)</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?</p>
+                    <div class="project_cta">
+                        <a href="#" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </article>
+                <article class="projects mix fullstack" data-order="3">
+                    <div class="prjct_img">
+                        <img src="https://via.placeholder.com/400x300" alt="Project 3">
+                    </div>
+                    <h5>Project Three Title (Fullstack)</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?</p>
+                    <div class="project_cta">
+                        <a href="#" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </article>
+                <article class="projects mix python" data-order="4">
+                    <div class="prjct_img">
+                        <img src="https://via.placeholder.com/400x300" alt="Project 4">
+                    </div>
+                    <h5>Project Four Title (Python)</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis praesentium nisi optio nobis suscipit doloremque?</p>
+                    <div class="project_cta">
+                        <a href="#" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <!-- FAQS SECTION -->
-    <section id="faqs">
-        <div class="container">
-            <h1>FAQs</h1>
-            <p>Frequently asked questions</p>
-            <!-- Add FAQs here -->
-        </div>
-    </section>
+        <!-- FAQS SECTION -->
+        <section id="faqs">
+            <div class="container">
+                <h1>FAQs</h1>
+                <p>Frequently asked questions</p>
+            </div>
+        </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <div class="container contact_container">
-            <form action="https://formsubmit.co/myhub.projects@gmail.com" method="POST">
-                <input type="text" name="Name" placeholder="Full Name">
-                <input type="email" name="Email" placeholder="Email Address">
-                <textarea rows="7" name="Message" placeholder="Message"></textarea>
-                <button type="submit" class="btn primary">Send</button>
-            </form>
-        </div>
-    </section>
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h1>Contact Me</h1>
+            <p>Get in touch!</p>
+            <div class="container contact_container">
+                <form action="https://formsubmit.co/your@email.com" method="POST" class="contact-form">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Portfolio Contact!">
+                    
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </section>
     </div>
+
     <script src="./node_modules/mixitup/dist/mixitup.min.js"></script>
     <script src="./index.js"></script>
 </body>
