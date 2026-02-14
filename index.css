@@ -317,5 +317,73 @@ header{
     color: var(--color-gray-900);
 }
 .project_cat{
-    
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0 2.5rem;
+}
+.projects_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 4rem;
+}
+.projects{
+    background: var(--color-gray-100);
+    transition: var(--transition);
+    padding-bottom: 1.5rem;
+    border: 0.5 solid var(--color-gray-100);
+    animation: projectAnim 1.5s ease forwards;
+
+}
+.projects:hover{
+    background: transparent;
+}
+.prjct_img{
+    max-height: 12rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+.projects h5{
+    padding: 0 1.2rem;
+}
+.projects p {
+    margin: 0.5rem 0 1.5rem;
+    padding: 0 1.2rem;
+    font-size: 0.8rem;
+}
+.project_cta{
+    padding: 0 1.2rem;
+    display: flex;
+    gap: 1rem;
+}
+.active{
+    background: var(--color-primary);
+    color: white;
+}
+@keyframes projectAnim{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+.contact_container{
+    width: 36%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+form input, form textarea{
+    padding: 1.2rem;
+    resize: none;
+    background: var(--color-gray-0);
+    color: var(--color-gray-900);
+}
+form button{
+    width: fit-content;
+    border: 0;
+    padding: 0.8rem 2rem;
 }

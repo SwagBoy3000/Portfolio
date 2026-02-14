@@ -160,3 +160,35 @@ left.forEach((Btn) => {
 
 // Set initial content
 right.innerHTML = expContent;
+const containerEl = document.querySelector('.projects_container')
+if (containerEl) { // ✅ Check if element exists
+    let mixer = mixitup(containerEl, {
+        animation: { // ← Lowercase 'a'
+            enable: false
+        },
+        selectors: {
+            target: '.projects' // ← Target class
+        }
+    });
+
+    // ✅ Filter button functionality
+    const filterButtons = document.querySelectorAll('.project_cat .btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Apply filter
+            mixer.filter(filterValue);
+        });
+    });
+} else {
+    console.error('MixItUp container not found!');
+}

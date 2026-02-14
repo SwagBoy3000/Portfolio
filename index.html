@@ -73,14 +73,14 @@
         <h1>My Projects</h1>
             <p>Check out what I've built</p>
             <menu class="project_cat">
-                <button class="btn active">All</button>
-                <button class="btn">Frontrnd</button>
-                <button class="btn">Backend</button>
-                <button class="btn">Fullstack</button>
-                <button class="btn">Python</button>
+                <button class="btn active" data-filter= "all">All</button>
+                <button class="btn" data-filter=".frontend">Frontrnd</button>
+                <button class="btn" data-filter=".backend">Backend</button>
+                <button class="btn" data-filter=".fullstack">Fullstack</button>
+                <button class="btn" data-filter=".python">Python</button>
             </menu>
-        <div class="container projects">
-            <article class="projects">
+        <div class="container projects_container">
+            <article class="projects mix frontend" data-order="1">
                 <div class="prjct_img">
                     <img src="" alt="">
                 </div>
@@ -92,7 +92,7 @@
                     <a href="" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
                 </div>
             </article>
-            <article class="projects">
+            <article class="projects mix backend" data-order="2">
                 <div class="prjct_img">
                     <img src="" alt="">
                 </div>
@@ -104,7 +104,7 @@
                     <a href="" class="btn primary" target="_blank"><i class="uil uil-github-alt"></i></a>
                 </div>
             </article>
-            <article class="projects">
+            <article class="projects mix fullstack" data-order="3">
                 <div class="prjct_img">
                     <img src="" alt="">
                 </div>
@@ -130,13 +130,16 @@
 
     <!-- CONTACT SECTION -->
     <section id="contact">
-        <div class="container">
-            <h1>Contact Me</h1>
-            <p>Get in touch!</p>
-            <!-- Add contact form here -->
+        <div class="container contact_container">
+            <form action="">
+                <input type="text" name="Name" placeholder="Full Name">
+                <input type="email" name="Email" placeholder="Email Address">
+                <textarea rows="7" name="Message" placeholder="Message"></textarea>
+                <button type="submit" class="btn primary">Send</button>
+            </form>
         </div>
     </section>
-
+    <script src="./node_modules/mixitup/dist/mixitup.min.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>
