@@ -28,6 +28,13 @@
 html{
     scroll-behavior: smooth;
 }
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-gray-100);
+}
+::-webkit-scrollbar-button {
+    display: none; 
+}
 body {
     font-family: "Montserrat", sans-serif;
     line-height: 1.6;
@@ -332,7 +339,7 @@ header{
     background: var(--color-gray-100);
     transition: var(--transition);
     padding-bottom: 1.5rem;
-    border: 0.5 solid var(--color-gray-100);
+    border: 0.5rem solid var(--color-gray-100);
     animation: projectAnim 1.5s ease forwards;
 
 }
