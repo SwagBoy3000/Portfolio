@@ -9,11 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <nav>
         <div class="container nav_container">
-            <a href="#">SwagBoy3000</a>
+            <a href="index.html">SwagBoy3000</a>
             <button class="nav_btn">
                 <i class="uil uil-moon"></i>
             </button>
@@ -31,12 +32,12 @@
 
         <header id="home">
             <div class="header">
-                <div class="header_img">
+                <div class="header_img" data-aos="fade-up" data-aos-delay="800">
                     <img src="./13ba2f96d42d462a9b823b13ab11a05d~tplv-jj85edgx6n-image-origin.jpeg" alt="Header image">
                 </div>
-                <h5>Hi, I'm Idir</h5>
-                <h1>CS Student <span>at USTHB</span></h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quidem eveniet, unde consequuntur commodi sunt provident!</p>
+                <h5 data-aos="fade-in">Hi, I'm Idir</h5>
+                <h1 data-aos="fade-in">CS Student <span>at USTHB</span></h1>
+                <p data-aos="fade-in">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quidem eveniet, unde consequuntur commodi sunt provident!</p>
                 <div class="header_cta">
                     <a href="#projects" class="btn">My Projects</a>
                     <a href="#contact" class="btn primary">Contact me</a>
@@ -145,5 +146,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
     <script src="./index.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration:2000,
+            offset: 80
+        });
+    </script>
 </body>
 </html>

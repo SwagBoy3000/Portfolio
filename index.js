@@ -145,3 +145,16 @@ if (containerEl && typeof mixitup !== 'undefined') {
         });
     });
 }
+const themetoggle = document.querySelector('.nav_btn')
+themetoggle.addEventListener('click', () =>{
+    document.body.classList.toggle('dark-theme-variables')
+    if(document.body.classList == ""){
+        themetoggle.innerHTML= `<i class="uil uil-moon"></i>`
+        window.localStorage.setItem('portfolio-theme','')
+    }else{
+         themetoggle.innerHTML= `<i class="uil uil-sun"></i>`
+         window.localStorage.setItem('portfolio-theme','dark-theme-variables')
+    }
+})
+const bodyclass = window.localStorage.getItem('portfolio-theme');
+document.body.className= bodyclass; 

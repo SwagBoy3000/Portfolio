@@ -26,6 +26,19 @@
     --container-w-sm: 94%;
     --transition: all 350ms ease;
 }
+.dark-theme-variables {
+  --color-gray-0: #0e0d14;
+  --color-gray-50: #211f2e;
+  --color-gray-100: #252233;
+  --color-gray-200: #545454;
+  --color-gray-300: #7b7b7b;
+  --color-gray-400: #919191;
+  --color-gray-500: #a1a1a1;
+  --color-gray-600: #c0c0c0;
+  --color-gray-700: #e6e5e5;
+  --color-gray-800: #fafafa;
+  --color-gray-900: #fff;
+}
 
 html {
     scroll-behavior: smooth;
@@ -166,6 +179,7 @@ section {
 
 header {
     background: var(--color-gray-0);
+    
 }
 
 section:nth-of-type(odd) {
