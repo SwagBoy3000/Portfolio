@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
 </head>
 <body>
     <nav>
@@ -144,14 +146,40 @@
         </section>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
-    <script src="./index.js"></script>
-    <script src="node_modules/aos/dist/aos.js"></script>    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>  
     <script>
-         AOS.init({
-            duration:2000,
-            offset: 80,
-        });
+         const pageWrapper = document.querySelector('.page-wrapper');
+        
+        if (pageWrapper) {
+            const simpleBarInstance = new SimpleBar(pageWrapper, {
+                autoHide: false
+            });
+            
+            setTimeout(function() {
+                const scrollContainer = document.querySelector('.simplebar-content-wrapper');
+                
+                if (scrollContainer) {
+                    AOS.init({
+                        duration: 800,
+                        easing: 'ease-in-out',
+                        once: false,
+                        mirror: true,
+                        offset: 120,
+                        scrollContainer: scrollContainer
+                    });
+                    
+                    scrollContainer.addEventListener('scroll', function() {
+                        AOS.refresh();
+                    });
+                    
+                    AOS.refresh();
+                }
+            }, 200);
+        }
     </script>
+    <script src="./index.js"></script>
+  
 </body>
 </html>
