@@ -43,8 +43,18 @@ window.addEventListener('load', function() {
 });
 
 // Dark theme toggle
+// Dark theme toggle with localStorage
 function initializeDarkTheme() {
     const themeBtn = document.querySelector('.nav_btn');
+    
+    // Check for saved theme preference on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme-variables');
+        const icon = themeBtn.querySelector('i');
+        icon.classList.remove('uil-moon');
+        icon.classList.add('uil-sun');
+    }
     
     if (themeBtn) {
         themeBtn.addEventListener('click', () => {
@@ -55,9 +65,13 @@ function initializeDarkTheme() {
             if (document.body.classList.contains('dark-theme-variables')) {
                 icon.classList.remove('uil-moon');
                 icon.classList.add('uil-sun');
+                // Save preference
+                localStorage.setItem('theme', 'dark');
             } else {
                 icon.classList.remove('uil-sun');
                 icon.classList.add('uil-moon');
+                // Save preference
+                localStorage.setItem('theme', 'light');
             }
         });
     }
