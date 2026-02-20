@@ -36,10 +36,32 @@ window.addEventListener('load', function() {
             initializeSmoothScroll(scrollContainer || pageWrapper);
             initializeResume();
             initializeMixItUp();
+            initializeDarkTheme(); // ✅ Add dark theme
             
         }, 300);
     }
 });
+
+// Dark theme toggle
+function initializeDarkTheme() {
+    const themeBtn = document.querySelector('.nav_btn');
+    
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme-variables');
+            
+            // Change icon
+            const icon = themeBtn.querySelector('i');
+            if (document.body.classList.contains('dark-theme-variables')) {
+                icon.classList.remove('uil-moon');
+                icon.classList.add('uil-sun');
+            } else {
+                icon.classList.remove('uil-sun');
+                icon.classList.add('uil-moon');
+            }
+        });
+    }
+}
 
 // Float nav functionality
 function initializeFloatNav(scrollContainer) {
