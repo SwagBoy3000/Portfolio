@@ -1,6 +1,9 @@
+// Get SimpleBar scroll container instead of page-wrapper
+const pageWrapper = document.querySelector('.page-wrapper');
+const simplebarContent = document.querySelector('.simplebar-content-wrapper') || pageWrapper;
+
 const FloatNavsBtn = document.querySelectorAll('.float_nav a');
 const sections = document.querySelectorAll('section, header');
-const pageWrapper = document.querySelector('.page-wrapper');
 
 const removeActiveClass = () => {
     FloatNavsBtn.forEach(Btn => {
@@ -15,14 +18,15 @@ FloatNavsBtn.forEach((Btn) => {
     });
 });
 
-if (pageWrapper) {
-    pageWrapper.addEventListener('scroll', () => {
+// ✅ Use simplebarContent instead of pageWrapper for scroll
+if (simplebarContent) {
+    simplebarContent.addEventListener('scroll', () => {
         let current = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             
-            if (pageWrapper.scrollTop >= (sectionTop - 200)) {
+            if (simplebarContent.scrollTop >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
         });
@@ -38,14 +42,15 @@ if (pageWrapper) {
     });
 }
 
+// ✅ Use simplebarContent for smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const target = document.querySelector(targetId);
         
-        if (target && pageWrapper) {
-            pageWrapper.scrollTo({
+        if (target && simplebarContent) {
+            simplebarContent.scrollTo({
                 top: target.offsetTop,
                 behavior: 'smooth'
             });
@@ -118,6 +123,7 @@ if (right) {
     right.innerHTML = expContent;
 }
 
+// MixItUp
 const containerEl = document.querySelector('.projects_container');
 
 if (containerEl && typeof mixitup !== 'undefined') {
@@ -145,16 +151,3 @@ if (containerEl && typeof mixitup !== 'undefined') {
         });
     });
 }
-const themetoggle = document.querySelector('.nav_btn')
-themetoggle.addEventListener('click', () =>{
-    document.body.classList.toggle('dark-theme-variables')
-    if(document.body.classList == ""){
-        themetoggle.innerHTML= `<i class="uil uil-moon"></i>`
-        window.localStorage.setItem('portfolio-theme','')
-    }else{
-         themetoggle.innerHTML= `<i class="uil uil-sun"></i>`
-         window.localStorage.setItem('portfolio-theme','dark-theme-variables')
-    }
-})
-const bodyclass = window.localStorage.getItem('portfolio-theme');
-document.body.className= bodyclass; 
