@@ -7,37 +7,49 @@
     list-style: none;
     box-sizing: border-box;
 }
-
 :root {
-    --color-primary: #156bd4;
-    --color-primary-variant: rgba(21, 107, 212, 0.5);
-    --color-gray-0: #fff;
-    --color-gray-50: #edecec;
-    --color-gray-100: #e6e5e5;
-    --color-gray-200: #c0c0c0;
-    --color-gray-300: #a1a1a1;
-    --color-gray-400: #919191;
-    --color-gray-500: #7b7b7b;
-    --color-gray-600: #545454;
-    --color-gray-700: #313131;
-    --color-gray-800: #1f1f1f;
-    --color-gray-900: #0e0e0e;
+    /* Catppuccin “dim Latte” (one more step darker) */
+
+    /* purple accent */
+    --color-primary: #8839ef; /* mauve (purple) */
+    --color-primary-variant: rgba(136, 57, 239, 0.5);
+
+    /* backgrounds/surfaces shifted darker */
+    --color-gray-0: #dce0e8;   /* crust (dimmer main background) */
+    --color-gray-50: #ccd0da;  /* surface0 */
+    --color-gray-100: #bcc0cc; /* surface1 */
+    --color-gray-200: #acb0be; /* surface2 */
+    --color-gray-300: #9ca0b0; /* overlay0 */
+    --color-gray-400: #8c8fa1; /* overlay1 */
+    --color-gray-500: #7c7f93; /* overlay2 */
+    --color-gray-600: #6c6f85; /* in-between step (custom) */
+    --color-gray-700: #5c5f77; /* subtext1 */
+    --color-gray-800: #4c4f69; /* text */
+    --color-gray-900: #4c4f69; /* text (strong) */
+
     --container-w-lg: 74%;
+    --container-w-md: 90%;
     --container-w-sm: 94%;
     --transition: all 350ms ease;
 }
+
 .dark-theme-variables {
-  --color-gray-0: #0e0d14;
-  --color-gray-50: #211f2e;
-  --color-gray-100: #252233;
-  --color-gray-200: #545454;
-  --color-gray-300: #7b7b7b;
-  --color-gray-400: #919191;
-  --color-gray-500: #a1a1a1;
-  --color-gray-600: #c0c0c0;
-  --color-gray-700: #e6e5e5;
-  --color-gray-800: #fafafa;
-  --color-gray-900: #fff;
+  /* Catppuccin Mocha */
+  --color-primary: #cba6f7; /* mauve (purple) */
+  --color-primary-variant: rgba(203, 166, 247, 0.45);
+
+  /* “grays” remapped to Mocha surfaces/text */
+  --color-gray-0: #1e1e2e;   /* base */
+  --color-gray-50: #181825;  /* mantle */
+  --color-gray-100: #313244; /* surface0 */
+  --color-gray-200: #45475a; /* surface1 */
+  --color-gray-300: #585b70; /* surface2 */
+  --color-gray-400: #6c7086; /* overlay0 */
+  --color-gray-500: #7f849c; /* overlay1 */
+  --color-gray-600: #9399b2; /* overlay2 */
+  --color-gray-700: #bac2de; /* subtext1 */
+  --color-gray-800: #cdd6f4; /* text */
+  --color-gray-900: #f5e0dc; /* optional “warm” highlight (rosewater) */
 }
 
 html {
@@ -440,6 +452,7 @@ header {
     justify-content: center;
     align-items: center;
     margin: 3rem 0 2.5rem;
+    flex-wrap: wrap;
 }
 
 .project_cat .btn.active {
@@ -527,4 +540,47 @@ header {
     width: fit-content;
     border: 0;
     padding: 0.8rem 2rem;
+}
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 1rem;
+    }
+    .container{
+        width: var(--container-w-sm);
+    }
+    section > h1, section > p {
+        width: var(--container-w-sm);
+    }
+    nav{
+        height: 4 rem;
+    }
+    .header{
+        width: 90%;
+    }
+    .header p{
+        margin-top: 0.4rem;
+    }
+    .header_socials{
+        display: none;
+    }
+    .resume{
+        grid-template-columns: 1fr;
+        gap:3rem;
+    }
+    .left menu{
+        gap: 0.7rem;
+    }
+   .right.skills ul{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+   }
+   .project_cat{
+        margin-top: 2.3rem;
+   }
+   .projects_container{
+        gap: 1.5rem;
+   }
+   form button{
+        width: 100%; 
+   }
 }
