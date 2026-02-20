@@ -149,36 +149,6 @@
     <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>  
-    <script>
-         const pageWrapper = document.querySelector('.page-wrapper');
-        
-        if (pageWrapper) {
-            const simpleBarInstance = new SimpleBar(pageWrapper, {
-                autoHide: false
-            });
-            
-            setTimeout(function() {
-                const scrollContainer = document.querySelector('.simplebar-content-wrapper');
-                
-                if (scrollContainer) {
-                    AOS.init({
-                        duration: 800,
-                        easing: 'ease-in-out',
-                        once: false,
-                        mirror: true,
-                        offset: 120,
-                        scrollContainer: scrollContainer
-                    });
-                    
-                    scrollContainer.addEventListener('scroll', function() {
-                        AOS.refresh();
-                    });
-                    
-                    AOS.refresh();
-                }
-            }, 200);
-        }
-    </script>
     <script src="./index.js"></script>
   
 </body>
