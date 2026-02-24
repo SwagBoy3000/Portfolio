@@ -1,6 +1,6 @@
 # 🌐 SwagBoy3000's Portfolio
 
-[![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?logo=github)](https://swagboy3000.github.io/Portfolio/)
+[![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?logo=github)](https://swagboy3000.github.io/)
 
 > *My personal space on the web - showcasing my projects and journey as a CS student.*
 
